@@ -43,5 +43,16 @@ class Museum
     Hash[@exhibits.map{|exhibit| [exhibit, all_patrons_intetested_in_exhibit(exhibit)]}]
   end
 
+  def ticket_lottery_contestants(exhibit)
+    result = []
+    patrons = all_patrons_intetested_in_exhibit(exhibit)
+    patrons.map do |patron|
+      if patron.spending_money < exhibit.cost
+        result << patron
+      end
+    end
+    result
+  end
+
 
 end
