@@ -29,5 +29,22 @@ class Museum
     patrons << patron
   end
 
+  def all_patrons_intetested_in_exhibit(exhibit)
+
+  end
+
+  # def patrons_by_exhibit_interest
+  #   result = {}
+    
+  #   @exhibits.map do |exhibit|
+     
+          
+          
+       
+  #   end
+  #   result
+  #   binding.pry
+  # end
+
 
 end
