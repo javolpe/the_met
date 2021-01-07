@@ -54,5 +54,11 @@ class Museum
     result
   end
 
+  def draw_Lottery_winner(exhibit)
+    contestants = ticket_lottery_contestants(exhibit)
+    contestants = contestants.shuffle
+    contestants[0]
+  end
+
 
 end
