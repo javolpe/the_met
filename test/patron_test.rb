@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require 'pry'
-require './lib/exhibit'
 require './lib/patron'
 require './lib/exhibit'
 
