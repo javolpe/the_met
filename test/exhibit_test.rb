@@ -1,5 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'pry'
 require './lib/exhibit'
 
 class ExhibitTest < MiniTest::Test 
@@ -10,5 +11,5 @@ class ExhibitTest < MiniTest::Test
     assert_equal 0, exhibit.cost
     assert_equal "Gems and Minerals", exhibit.name
   end
-  
+
 end
