@@ -88,15 +88,15 @@ class MusuemTest < MiniTest::Test
     dmns.admit(patron_2)
     dmns.admit(patron_3)
     
-    expected = { gems_and_minerals: [patron_1],
-                dead_sea_scrolls: [patron_1, patron_2, patron_3],
-                imax: []
+    expected = { gems_and_minerals => [patron_1],
+                dead_sea_scrolls => [patron_1, patron_2, patron_3],
+                imax => []
     }
 
     assert_equal expected, dmns.patrons_by_exhibit_interest
   end
 
-  def test_all_patrons_intetested_in_exhibit(exhibit)
+  def test_all_patrons_intetested_in_exhibit
     dmns = Museum.new("Denver Museum of Nature and Science")
     gems_and_minerals = Exhibit.new({name: "Gems and Minerals", cost: 0})
     dead_sea_scrolls = Exhibit.new({name: "Dead Sea Scrolls", cost: 10})
@@ -118,4 +118,5 @@ class MusuemTest < MiniTest::Test
     assert_equal [patron_1], dmns.all_patrons_intetested_in_exhibit(gems_and_minerals)
     assert_equal [patron_1, patron_2, patron_3], dmns.all_patrons_intetested_in_exhibit(dead_sea_scrolls)
     assert_equal [], dmns.all_patrons_intetested_in_exhibit(imax)
+  end
 end

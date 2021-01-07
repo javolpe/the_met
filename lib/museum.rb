@@ -30,21 +30,18 @@ class Museum
   end
 
   def all_patrons_intetested_in_exhibit(exhibit)
-
+    result = []
+    @patrons.map do |patron|
+      patron.interests.map do |interest|
+        result << patron if interest == exhibit.name
+      end
+    end
+    result
   end
 
-  # def patrons_by_exhibit_interest
-  #   result = {}
-    
-  #   @exhibits.map do |exhibit|
-     
-          
-          
-       
-  #   end
-  #   result
-  #   binding.pry
-  # end
+  def patrons_by_exhibit_interest
+    Hash[@exhibits.map{|exhibit| [exhibit, all_patrons_intetested_in_exhibit(exhibit)]}]
+  end
 
 
 end
